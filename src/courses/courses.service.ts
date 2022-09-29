@@ -24,7 +24,7 @@ export class CoursesService {
   async findOne(id: string) {
     const course = await this.courseRepository.findOne({
       where: {
-        id: Number(id)
+        id: Number(id),
       },
       relations: ['tags'],
     });
