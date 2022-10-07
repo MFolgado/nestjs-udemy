@@ -28,18 +28,17 @@ export class CoursesController {
   }
 
   @Post()
-  @HttpCode(HttpStatus.NO_CONTENT)
   create(@Body() createCourseDto: CreateCourseDto) {
     return this.coursesService.create(createCourseDto);
   }
 
   @Patch(':id')
-  update(@Param('id') id: number, @Body() updateCourseDto: UpdateCourseDto) {
+  update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
     return this.coursesService.update(id, updateCourseDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     return this.coursesService.remove(id);
   }
 }
